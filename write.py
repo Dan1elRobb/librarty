@@ -24,7 +24,7 @@ books = [
          publication_date=date(2018, 5, 12),
          ),
     Book(title="How to Train your dragon",
-         isbn=(randint(999999999999, 9999999999999)),
+         isbn="".join([str(randint(0, 9)) for _ in range(13)]),
          num_pages=randint(200, 1000),
          publication_date=date(1813, 2, 23),
          ),
@@ -43,9 +43,9 @@ books = [
 
 writers = [
     Writer(writer_name="Jane Eyre"),
-    Writer(w_name="Superman"),
-    Writer(w_name="batman"),
-    Writer(w_name="The flash"),
+    Writer(writer_name="Superman"),
+    Writer(writer_name="batman"),
+    Writer(writer_name="The flash"),
 ]
 
 people = [
@@ -57,17 +57,17 @@ people = [
     Person(name="Clive Newsend", membership_expiry=False)
 ]
 
-books[randint(1,4)].writers.append(writers[0])
-books[randint(1,4)].publisher = publishers[0]
-books[randint(1,4)].writers.append(writers[1])
-books[randint(1,4)].publisher = publishers[1]
-books[randint(1,4)].writers.append(writers[2])
-books[randint(1,4)].writers.append(writers[3])
-books[randint(1,4)].publisher = publishers[0]
-books[randint(1,4)].writers.append(writers[3])
-books[randint(1,4)].publisher = publishers[2]
-books[randint(1,4)].writers.append(writers[3])
-books[randint(1,4)].publisher = publishers[3]
+books[0].writers.append(writers[0])
+books[0].publisher = publishers[0]
+books[1].writers.append(writers[1])
+books[1].publisher = publishers[1]
+books[2].writers.append(writers[2])
+books[2].writers.append(writers[3])
+books[3].publisher = publishers[0]
+books[3].writers.append(writers[3])
+books[4].publisher = publishers[2]
+books[4].writers.append(writers[3])
+
 
 books[randint(1,4)].borrowers.append(people[5])
 books[randint(1,4)].borrowers.append(people[1])
